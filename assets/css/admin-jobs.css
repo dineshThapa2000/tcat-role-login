@@ -1,0 +1,216 @@
+/* ==============================
+   TCAT Admin Jobs Styles
+   ============================== */
+body{background-color: #0073aa;}
+/* Wrapper & Heading */
+.tcat-admin-jobs-wrapper {
+    font-family: Arial, sans-serif;
+    margin: 20px 0;
+}
+.tcat-jobs-heading {
+    font-size: 24px;
+    color: #003848;
+    margin-bottom: 15px;
+}
+
+/* Filters */
+.tcat-job-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.filter-input,
+.filter-select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.filter-input {
+    width: 200px;
+}
+.filter-select {
+    min-width: 150px;
+}
+
+/* Table */
+.tcat-jobs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+.tcat-jobs-table th,
+.tcat-jobs-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+.tcat-jobs-table th {
+    background-color: #003848;
+    color: #fff;
+    text-align: left;
+}
+.tcat-jobs-table tr.even-row {
+    background-color: #ffffff;
+}
+.tcat-jobs-table tr.odd-row {
+    background-color: #f9f9f9;
+}
+.tcat-jobs-table tr:hover {
+    background-color: #e8f4f9;
+}
+.job-title-link {
+    color: #0073aa;
+    text-decoration: none;
+}
+.job-title-link:hover {
+    text-decoration: underline;
+}
+
+/* Status */
+.status {
+    font-weight: bold;
+}
+.status-active {
+    color: green;
+}
+.status-draft {
+    color: orange;
+}
+.status-expired {
+    color: red;
+}
+
+/* Closing soon */
+.closing-soon {
+    color: darkorange;
+    font-weight: bold;
+}
+
+/* Preview button */
+.preview-job-btn {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 18px;
+    transition: transform 0.2s;
+}
+.preview-job-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Pagination */
+.tcat-pagination {
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* No jobs message */
+.no-jobs-msg {
+    font-style: italic;
+    color: #555;
+}
+
+/* ==============================
+   Job Preview Panel
+   ============================== */
+.tcat-job-preview-panel {
+    display: none;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Close button */
+.close-preview-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #003848;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.close-preview-btn:hover {
+    background-color: #005a6b;
+}
+
+/* Job preview content */
+.job-preview-content h2.job-title {
+    color: #003848;
+    margin-bottom: 5px;
+}
+.job-preview-content p {
+    margin: 5px 0;
+}
+.job-preview-content .tab-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.job-preview-content .tab-btn {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+    transition: background 0.2s, color 0.2s;
+}
+.job-preview-content .tab-btn:hover {
+    background-color: #003848;
+    color: #fff;
+}
+#job-content-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+#job-content-container table td {
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+}
+.sticky-apply-wrapper {
+    margin-top: 15px;
+}
+.apply-now-button {
+    display: inline-block;
+    background-color: #003848;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+.apply-now-button:hover {
+    background-color: #005a6b;
+}
+
+/* Tab content */
+#overview-content, #description-content {
+    margin-top: 10px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tcat-job-filters {
+        flex-direction: column;
+    }
+    .filter-input,
+    .filter-select {
+        width: 100%;
+    }
+}

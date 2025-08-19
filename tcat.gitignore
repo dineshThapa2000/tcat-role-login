@@ -1,0 +1,14 @@
+# Ignore WordPress core
+wp-admin/
+wp-includes/
+*.log
+
+# Ignore uploads
+wp-content/uploads/
+
+# Ignore LocalWP config
+.local/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
