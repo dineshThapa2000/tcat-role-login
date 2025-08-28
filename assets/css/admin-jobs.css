@@ -1,216 +1,132 @@
 /* ==============================
-   TCAT Admin Jobs Styles
+   Job Preview Panel Content (Professional Style)
    ============================== */
-body{background-color: #0073aa;}
-/* Wrapper & Heading */
-.tcat-admin-jobs-wrapper {
-    font-family: Arial, sans-serif;
-    margin: 20px 0;
-}
-.tcat-jobs-heading {
-    font-size: 24px;
-    color: #003848;
-    margin-bottom: 15px;
-}
-
-/* Filters */
-.tcat-job-filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-.filter-input,
-.filter-select {
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-}
-.filter-input {
-    width: 200px;
-}
-.filter-select {
-    min-width: 150px;
-}
-
-/* Table */
-.tcat-jobs-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
-}
-.tcat-jobs-table th,
-.tcat-jobs-table td {
-    padding: 10px;
-    border: 1px solid #ddd;
-}
-.tcat-jobs-table th {
-    background-color: #003848;
-    color: #fff;
-    text-align: left;
-}
-.tcat-jobs-table tr.even-row {
-    background-color: #ffffff;
-}
-.tcat-jobs-table tr.odd-row {
-    background-color: #f9f9f9;
-}
-.tcat-jobs-table tr:hover {
-    background-color: #e8f4f9;
-}
-.job-title-link {
-    color: #0073aa;
-    text-decoration: none;
-}
-.job-title-link:hover {
-    text-decoration: underline;
-}
-
-/* Status */
-.status {
-    font-weight: bold;
-}
-.status-active {
-    color: green;
-}
-.status-draft {
-    color: orange;
-}
-.status-expired {
-    color: red;
-}
-
-/* Closing soon */
-.closing-soon {
-    color: darkorange;
-    font-weight: bold;
-}
-
-/* Preview button */
-.preview-job-btn {
-    cursor: pointer;
-    background: none;
-    border: none;
-    font-size: 18px;
-    transition: transform 0.2s;
-}
-.preview-job-btn:hover {
-    transform: scale(1.2);
-}
-
-/* Pagination */
-.tcat-pagination {
-    margin-top: 15px;
-    text-align: center;
-}
-
-/* No jobs message */
-.no-jobs-msg {
-    font-style: italic;
-    color: #555;
-}
-
-/* ==============================
-   Job Preview Panel
-   ============================== */
-.tcat-job-preview-panel {
+#tcat-job-preview-panel {
     display: none;
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-top: 20px;
-    background-color: #f5f5f5;
-    border-radius: 5px;
+    padding: 25px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     position: relative;
     animation: fadeIn 0.3s ease-in-out;
+    color: #000;
+    font-family: Arial, sans-serif;
 }
 
-/* Close button */
-.close-preview-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #003848;
-    color: #fff;
-    border: none;
+/* Panel Heading */
+#tcat-job-preview-panel h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #000; /* Dark teal heading */
+}
+
+/* Subheading / Location / Closing Date */
+#job-preview-content p.subheading {
+    font-weight: bold;
+    margin: 5px 0 15px;
+    color: #000;
+}
+.closing-date {
+    background-color: #f4a261;
     padding: 6px 12px;
+    display: inline-block;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+/* Tab Buttons */
+#job-preview-content #show-overview,
+#job-preview-content #show-description {
+    margin-right: 10px;
+    padding: 8px 18px;
+    border: 1px solid #000;
     border-radius: 4px;
     cursor: pointer;
-    font-weight: bold;
-}
-.close-preview-btn:hover {
-    background-color: #005a6b;
-}
-
-/* Job preview content */
-.job-preview-content h2.job-title {
-    color: #003848;
-    margin-bottom: 5px;
-}
-.job-preview-content p {
-    margin: 5px 0;
-}
-.job-preview-content .tab-buttons {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-.job-preview-content .tab-btn {
-    padding: 8px 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
     background-color: #fff;
-    transition: background 0.2s, color 0.2s;
+    color: #000;
+    font-weight: bold;
+    transition: all 0.2s;
 }
-.job-preview-content .tab-btn:hover {
+#job-preview-content #show-overview:hover,
+#job-preview-content #show-description:hover {
     background-color: #003848;
     color: #fff;
 }
-#job-content-container table {
+
+/* Table Styling: 2x3 layout */
+#job-preview-content table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 15px;
-}
-#job-content-container table td {
-    padding: 6px 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
     border: 1px solid #ddd;
 }
-.sticky-apply-wrapper {
+#job-preview-content table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+    color: #000;
+}
+#job-preview-content table tr:first-child td {
+    font-weight: bold;
+}
+
+/* Grid-like table styling (2 columns per row) */
+#job-preview-content table tr:nth-child(odd) td:first-child,
+#job-preview-content table tr:nth-child(even) td:first-child {
+    font-weight: bold;
+}
+
+/* Overview & Description Panels */
+#overview-content, #description-content {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
     margin-top: 15px;
 }
+
+/* Apply Now Button */
 .apply-now-button {
     display: inline-block;
     background-color: #003848;
     color: #fff;
-    padding: 10px 18px;
-    border-radius: 5px;
+    padding: 10px 20px;
+    border-radius: 4px;
     text-decoration: none;
     font-weight: bold;
-    transition: background 0.2s;
+    margin-top: 20px;
+    transition: all 0.2s;
 }
 .apply-now-button:hover {
     background-color: #005a6b;
 }
 
-/* Tab content */
-#overview-content, #description-content {
-    margin-top: 10px;
-}
-
-/* Animations */
+/* Smooth fade-in animation */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    .tcat-job-filters {
-        flex-direction: column;
+    #tcat-job-preview-panel {
+        padding: 15px;
     }
-    .filter-input,
-    .filter-select {
+    #job-preview-content table td {
+        padding: 10px;
+        display: block;
         width: 100%;
+    }
+    #job-preview-content #show-overview,
+    #job-preview-content #show-description {
+        margin-bottom: 8px;
+    }
+    .apply-now-button {
+        width: 100%;
+        text-align: center;
     }
 }

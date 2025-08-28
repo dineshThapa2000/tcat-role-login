@@ -1,0 +1,177 @@
+/* ================= BASE CONTAINER ================= */
+.tcat-applicant-jobs {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #1a1a1a;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Section Title */
+.tcat-applicant-jobs h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #003848;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #911A24;
+    padding-bottom: 8px;
+}
+
+/* ================= JOB LIST ================= */
+.tcat-job-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Filter Form */
+.tcat-job-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.tcat-job-filters select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.tcat-job-filters select:hover,
+.tcat-job-filters select:focus {
+    border-color: #0073aa;
+    box-shadow: 0 0 5px rgba(0, 115, 170, 0.2);
+    outline: none;
+}
+
+/* ================= JOB CARD ================= */
+.tcat-job-card {
+    flex: 1 1 calc(33.333% - 20px);
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative; /* allow absolute positioning of save button */
+}
+
+/* Card Hover */
+.tcat-job-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+/* Job Title */
+.tcat-job-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #911A24;
+    font-weight: 600;
+}
+
+/* Job Details */
+.tcat-job-card p {
+    font-size: 14px;
+    margin: 6px 0;
+    color: #333;
+}
+
+/* ================= SAVE JOB BUTTON (TOP RIGHT) ================= */
+.tcat-save-job-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #888;
+    font-size: 18px;
+    z-index: 5;
+}
+
+.tcat-save-job-btn:hover {
+    background: #fff;
+    border-color: #0073aa;
+    color: #0073aa;
+}
+
+.tcat-save-job-btn.saved {
+    background: #ffeef0;
+    border-color: #e63946;
+    color: #e63946;
+}
+
+/* ================= CARD ACTIONS ================= */
+.tcat-job-actions {
+    margin-top: 18px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Apply Button Job Details Button  */
+.tcat-apply-btn , .tcat-job-description-btn{
+    padding: 10px 18px;
+    background: linear-gradient(135deg, #003848, #911A24);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.tcat-apply-btn:hover, .tcat-job-description-btn:hover {
+    background: linear-gradient(135deg, #911A24, #003848);
+    transform: translateY(-2px);
+}
+
+/* All most all Job Details stylish are enqueued from admin-jobs.css */
+
+#overview-content :is(h1, h2, h3, h4, h5, h6, p),
+#description-content :is(h1, h2, h3, h4, h5, h6, p) {
+    color: #000;
+}
+
+
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+    .tcat-job-card {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+    .tcat-job-card {
+        flex: 1 1 100%;
+    }
+}

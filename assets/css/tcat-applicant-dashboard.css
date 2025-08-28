@@ -1,0 +1,150 @@
+/* =========================
+   Applicant Dashboard Styles
+   ========================= */
+
+body .tcat-applicant-dashboard {
+    display: flex;
+    flex-direction: column;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    background: #f5f6f8;
+    min-height: 100vh;
+}
+
+/* Header */
+.tcat-applicant-dashboard .tcat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003848;
+    color: #fff;
+    padding: 15px 30px;
+    border-bottom: 2px solid #911A24;
+}
+
+.tcat-applicant-dashboard .tcat-logo {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.tcat-applicant-dashboard .tcat-header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.tcat-applicant-dashboard .tcat-header-right span {
+    font-weight: 500;
+}
+
+.tcat-applicant-dashboard .tcat-header-right a.tcat-logout {
+    background-color: #911A24;
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.tcat-applicant-dashboard .tcat-header-right a.tcat-logout:hover {
+    background-color: #d02034;
+}
+
+/* Body */
+.tcat-applicant-dashboard .tcat-body {
+    display: flex;
+    flex: 1;
+    min-height: calc(100vh - 64px); /* adjust for header height */
+}
+
+/* Sidebar */
+.tcat-applicant-dashboard .tcat-sidebar {
+    width: 220px;
+    background: #003848;
+    color: #fff;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.tcat-applicant-dashboard .tcat-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tcat-applicant-dashboard .tcat-sidebar li {
+    margin: 5px 0;
+}
+
+.tcat-applicant-dashboard .tcat-sidebar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-left: 4px solid transparent;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.tcat-applicant-dashboard .tcat-sidebar a:hover {
+    background: #021f2a;
+    border-left-color: #911A24;
+}
+
+/* Main Content */
+.tcat-applicant-dashboard .tcat-main-content {
+    flex: 1;
+    background: #fff;
+    padding: 25px;
+    overflow-y: auto;
+    border-left: 1px solid #ddd;
+}
+
+/* Loading text */
+.tcat-applicant-dashboard .tcat-main-content p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    .tcat-applicant-dashboard .tcat-body {
+        flex-direction: column;
+    }
+
+    .tcat-applicant-dashboard .tcat-sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .tcat-applicant-dashboard .tcat-sidebar a {
+        flex: 1 0 auto;
+        justify-content: center;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+    }
+
+    .tcat-applicant-dashboard .tcat-sidebar a:hover {
+        border-bottom-color: #911A24;
+    }
+
+    .tcat-applicant-dashboard .tcat-main-content {
+        border-left: none;
+        border-top: 1px solid #ddd;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .tcat-applicant-dashboard .tcat-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .tcat-applicant-dashboard .tcat-header-right {
+        justify-content: center;
+    }
+}
+
